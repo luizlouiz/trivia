@@ -112,6 +112,12 @@ body {
   align-items: center;
 }
 
+.explore-button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 
 .hide {
   display: none;
