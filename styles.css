@@ -1,0 +1,140 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  font-family: 'FF Good Pro'; 
+}
+
+:root {
+  --hue-neutral: 200;
+  --hue-wrong: 0;
+  --hue-correct: 145;
+}
+
+body {
+  --hue: var(--hue-neutral);
+  padding: 0;
+  margin: 0;
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background-color: hsl(var(--hue), 100%, 20%);
+}
+
+
+.container {
+  width: 950px;
+  height: 390px; 
+  /*background-color: white;*/
+  background-image: url(background.png);
+  background-position: center; 
+  background-size: cover; 
+  border-radius: 5px;
+  padding: 100px;
+  box-shadow: 0 0 10px 2px;
+}
+
+@font-face {
+  font-family: 'FF Good Pro';
+  src: local('FF Good Pro Medium'), local('FF-Good-Pro-Medium'),
+      url('FFGoodPro-Medium.woff2') format('woff2'),
+      url('FFGoodPro-Medium.woff') format('woff'),
+      url('FFGoodPro-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+.question {
+
+   text-align: center;
+   font-size: x-large;
+   color: white;
+}
+
+.btn-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin: 10px 0;
+  
+}
+
+.btn {
+  --hue: var(--hue-neutral);
+  border: 2px solid hsl(var(--hue), 100%, 30%);
+  background-color: hsl(var(--hue), 100%, 90%);
+  border-radius: 25px;
+  padding: 15px 15px;
+  color: rgb(1, 1, 43);
+  justify-content: center;
+}
+
+.btn:hover {
+  border-color: rgb(85, 85, 85);
+  background-color:white; 
+}
+
+.btn.correct {
+  --hue: var(--hue-correct);
+  color: rgb(51, 218, 29);
+  border-color: hsl(var(--hue-correct));
+  background-color: white;
+}
+
+.btn.wrong {
+  --hue: var(--hue-wrong);
+  color: rgb(238, 38, 38);
+  border-color: hsl(var(--hue-wrong));
+  background-color: white;
+}
+
+.btn-grid .btn.already-answered {
+  pointer-events: none;
+}
+
+.next-btn {
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 10px 20px;
+  
+}
+
+.explore-btn {
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 10px 20px;
+  justify-content: center;
+}
+
+.controls {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+}
+
+
+.hide {
+  display: none;
+}
+
+
+@media (max-width: 820px){
+  
+  .btn-grid {
+  grid-template-columns: repeat(1, auto); 
+  }
+
+  .controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;   
+  }
+  
+  .container {
+    max-width: 100%;
+    min-width: 50%;
+    /* min-height:650px; */
+    height: auto;
+  }
+
+}
